@@ -150,10 +150,6 @@ button.play {
   color: var(--green);
 }
 
-.synonyms {
-  width: 50%;
-}
-
 button.speech {
   color: var(--green);
   background-color: var(--white);
@@ -175,18 +171,20 @@ button:hover {
 
 h3 {
   font-family: "Vollkorn", serif;
-  font-size: 24px;
+  font-size: 22px;
   color: var(--black);
   margin: 0;
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 22px;
+  margin: 0;
 }
 
 h5 {
   font-size: 16px;
   font-weight: 600;
+  margin: 0;
 }
 
 .example {
@@ -195,6 +193,22 @@ h5 {
   gap: 0px;
   color: var(--green);
   font-style: italic;
+  font-size: 16px;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  position: relative;
 }
 
 footer {

@@ -2,11 +2,11 @@ import React from "react";
 import Meaning from "./Meaning";
 
 export default function Results({ results }) {
-  console.log(results);
-
   function getAudio(event) {
     event.preventDefault();
-    alert(`The audio is ${results.phonetics[0].audio}`);
+    results.phonetics.map(function (sound, index) {
+      alert(sound.audio);
+    });
   }
 
   if (results) {
@@ -29,22 +29,27 @@ export default function Results({ results }) {
             </button>
             <span>
               <h2>{results.word}</h2>
-              <h4 className="green">{results.phonetics[1].text}</h4>
+              {results.phonetics.map(function (sound, index) {
+                if (index < 1) {
+                  return (
+                    <h4 className="green" key={index}>
+                      {sound.text}
+                    </h4>
+                  );
+                } else {
+                  return null;
+                }
+              })}
             </span>
           </span>
-          <span className="synonyms col-6">
-            <h4>synonyms</h4>
-            <p>
-              <a href="/">
-                nightfall, twilight, dusk, evening, sundown, vesper
-              </a>
-            </p>
-            <button className="speech">
-              {results.meanings[0].partOfSpeech}
-            </button>
-            <button className="speech">
-              {results.meanings[1].partOfSpeech}
-            </button>
+          <span className="audio col-6">
+            {results.meanings.map(function (speech, index) {
+              return (
+                <button className="speech" key={index}>
+                  {speech.partOfSpeech}
+                </button>
+              );
+            })}
           </span>
         </div>
         {results.meanings.map(function (meaning, index) {

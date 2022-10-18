@@ -1,26 +1,31 @@
 import React from "react";
+import Synonyms from "./Synonyms.js";
 
 export default function Meaning({ meaning }) {
-  if (meaning.definitions[0].example) {
-    return (
-      <div className="card">
-        <div className="definition">
-          <h3>{meaning.partOfSpeech}</h3>
-          <h4>{meaning.definitions[0].definition}</h4>
-        </div>
-        <div className="example">
-          <p>ex. "{meaning.definitions[0].example}"</p>
-        </div>
+  return (
+    <div className="card">
+      <div className="definition">
+        <h3>{meaning.partOfSpeech}</h3>
+        <h4>{meaning.definitions[0].definition}</h4>
+        <p className="example">{meaning.definitions[0].example}</p>
+        {meaning.definitions.map(function (definition, index) {
+          if (index > 0 && index < 2) {
+            return (
+              <div key={index}>
+                <br />
+                <p>
+                  {definition.definition}
+                  <br />
+                  <div className="example">{definition.example}</div>
+                </p>
+              </div>
+            );
+          } else {
+            return null;
+          }
+        })}
+        <Synonyms data={meaning.synonyms} />
       </div>
-    );
-  } else {
-    return (
-      <div className="card">
-        <div className="definition">
-          <h3>{meaning.partOfSpeech}</h3>
-          <h4>{meaning.definitions[0].definition}</h4>
-        </div>
-      </div>
-    );
-  }
+    </div>
+  );
 }
