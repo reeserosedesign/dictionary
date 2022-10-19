@@ -13,11 +13,8 @@ export default function Meaning({ meaning }) {
             return (
               <div key={index}>
                 <br />
-                <p>
-                  {definition.definition}
-                  <br />
-                  <div className="example">{definition.example}</div>
-                </p>
+                <p>{definition.definition}</p>
+                <p className="example">{definition.example}</p>
               </div>
             );
           } else {
