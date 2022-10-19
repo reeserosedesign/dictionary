@@ -1,6 +1,5 @@
 import React from "react";
 import Meaning from "./Meaning";
-import ReactAudioPlayer from "react-audio-player";
 
 export default function Results({ results }) {
   if (results) {
@@ -11,7 +10,8 @@ export default function Results({ results }) {
             {results.phonetics.map(function (audio, index) {
               if (audio.audio) {
                 return (
-                  <a href={audio.audio}
+                  <a
+                    href={audio.audio}
                     target="_blank"
                     rel="noreferrer"
                     key={index}
@@ -22,7 +22,7 @@ export default function Results({ results }) {
                       width="40"
                       height="40"
                       fill="currentColor"
-                      class="bi bi-play-circle"
+                      className="bi bi-play-circle"
                       viewBox="0 0 16 16"
                     >
                       <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />

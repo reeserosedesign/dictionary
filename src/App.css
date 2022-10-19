@@ -215,6 +215,26 @@ li {
   position: relative;
 }
 
+.photos.card {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  padding-bottom: 8px;
+}
+
+img.img-fluid {
+  display: inline;
+  border-radius: 10px;
+  transition: var(--transition);
+  box-shadow: var(--default);
+  margin-bottom: 24px;
+}
+
+img.img-fluid:hover {
+  box-shadow: var(--hover);
+}
+
 footer {
   margin-top: 24px;
   text-align: center;
