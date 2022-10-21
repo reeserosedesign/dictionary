@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Photos({ photos }) {
-  if (photos) {
+  if (photos.length > 1) {
     return (
       <div className="results">
         <div className="photos card">
